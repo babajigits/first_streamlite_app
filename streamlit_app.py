@@ -9,7 +9,7 @@ import pandas
 my_fruit_list=pandas.read_csv("https://uni-lab-files.s3.us-west-2.amazonaws.com/dabw/fruit_macros.txt")
 
 # we will add a multiselect so that users can pick what they want
-streamlit.multiselect("Pick some Fruits:", list(my _fruit_list.index))
+streamlit.multiselect("Pick some Fruits:", list(my_fruit_list.index))
 
 #Display the table on the page
 streamlit.dataframe(my_fruit_list)

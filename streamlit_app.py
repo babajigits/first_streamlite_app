@@ -1,5 +1,4 @@
-#snowflake connector 
-import snowflake.connector
+
 
 import streamlit
 streamlit.title('Complete Badges in Snowflake')
@@ -42,6 +41,9 @@ fruityvice_response = requests.get("https://fruityvice.com/api/fruit/" + fruit_c
 fruityvice_normalized = pandas.json_normalize(fruityvice_response.json())
 # write your own comment - creating a dataframe from normalized data 
 streamlit.dataframe(fruityvice_normalized)
+
+#snowflake connector 
+import snowflake.connector
 
 
 

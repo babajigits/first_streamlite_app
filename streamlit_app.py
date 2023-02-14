@@ -53,7 +53,7 @@ except URLError as e:
 
 
 #stop here for now until we fix the issue
-streamlit.stop()
+#streamlit.stop()
 
 #snowflake connector 
 

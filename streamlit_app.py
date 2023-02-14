@@ -72,8 +72,15 @@ if streamlit.button('Get Fruit Load List'):
   #my_cnx.close()
   streamlit.dataframe(my_data_rows)
 
+#nothing is running after this
 streamlit.stop()
-fruit_choice = streamlit.text_input('What fruit would you like to add?','Jackfruit')
+#decoding
+
+add_my_fruit = streamlit.text_input('What fruit would you like to add?')
+streamlit.write('Thanks for adding ', add_my_fruit)
+#This will not work correctly but add it for now
+my_cur.execute("insert into fruit_loadt_list values ('from streamlit')")
+
 #new code
 
 

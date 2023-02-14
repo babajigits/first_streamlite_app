@@ -56,7 +56,7 @@ except URLError as e:
 #streamlit.stop()
 
 #snowflake connector 
-
+streamlit.stop()
 
 #Snowflake-related functions
 def get_fruit_load_list():

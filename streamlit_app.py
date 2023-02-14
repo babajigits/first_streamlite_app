@@ -31,20 +31,19 @@ streamlit.dataframe(fruits_to_show)
 #streamlit.multiselect("Pick some Fruits:", list(my_fruit_list.index),['Avacado','Strawberries'])
 
 #Fruitvice API response
-streamlit.header('Fruitvice Fruit Advice!')
+#New Section to display fruityvice api response
+streamlit.header( 'Fruitvvice Fruit Advice! ')
+try:
+  fruit_choice = streamlit.text_input('What fruit would you like information about?')
+  if not fruit_choice:
+    streamlit.error("Please select a fruit to get information.")
+  else:
+    fruityvice_response = requests.get("https://fruityvice.com/api/fruit/" + fruit_choice)
+    fruitvvice_normalized = pandas.json_normalize(fruitvvice_response.json())
+    streamlit.dataframe(fruitvvice_normalized)
+except URLError as e:
+  streamlit. error()
 
-fruit_choice = streamlit.text_input('What fruit would you like information about?','Kiwi')
-streamlit.write('The user entered ', fruit_choice)
-                 
-
-
-fruityvice_response = requests.get("https://fruityvice.com/api/fruit/" + fruit_choice)
-#streamlit.text(fruityvice_response.json())
-
-# write your own comment - Normalizing the json output from API response
-fruityvice_normalized = pandas.json_normalize(fruityvice_response.json())
-# write your own comment - creating a dataframe from normalized data 
-streamlit.dataframe(fruityvice_normalized)
 
 #stop here for now until we fix the issue
 streamlit.stop()
